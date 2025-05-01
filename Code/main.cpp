@@ -18,6 +18,30 @@ using namespace std;
 
 
 const int NUM_ITEMS = 4;
+void playGame(sf::RenderWindow &window, sf::Font &font) {
+    sf::Text text;
+    text.setFont(font);
+    text.setString("Game Started!");
+    text.setCharacterSize(40);
+    text.setFillColor(sf::Color::Green);
+    text.setPosition(100, 100);
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
+                return;  // Go back to menu
+        }
+
+        window.clear(sf::Color::Black);
+        window.draw(text);
+        window.display();
+    }
+}
+
+
 
 void runMenu(sf::RenderWindow &window, sf::Font &font) 
 {
@@ -66,9 +90,11 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
                 else if (event.key.code == sf::Keyboard::Down) {
                     selectedIndex = (selectedIndex + 1) % NUM_ITEMS;
                 }
-                else if (event.key.code == sf::Keyboard::Enter) {
-                    if (selectedIndex == 0) {
-                        
+                else if (event.key.code == sf::Keyboard::Enter) 
+                {
+                    if (selectedIndex == 0) 
+                    {
+                      playGame(window, font);    
                     } else if (selectedIndex == 1) {
                         
                     } else if (selectedIndex == 2) {
@@ -106,39 +132,17 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
 int main()
 {
   sf::ContextSettings settings;
-  settings.antialiasingLevel= 8;
+  
   sf::RenderWindow window(sf::VideoMode(800,600), "Magical Pets Kingdom", sf::Style::Default,  settings);
   window.setFramerateLimit(30);
    sf::Font font;
 
-    if (!font.loadFromFile("arial.ttf")) {
-        return -1;
-    }
-  
-  sf::CircleShape ball(50.f);
-  ball.setFillColor(sf::Color::Yellow);
-  ball.setPosition(0.f, 0.f);
-
-  sf::Vector2f velocity(5.f, 5.f);
-   
-
-
-  while(window.isOpen())
-  {
-    sf::Event event;
-    while(window.pollEvent(event))
+    if(!font.loadFromFile("arial.ttf")) 
     {
-    if(event.type == sf::Event::Closed)
-    window.close();
+      return -1;
     }
-
-  window.clear(sf::Color::Black);
-  
+   
   runMenu(window, font);
-  
-  window.display();
-  }
-  
   
   return 0;
 }
