@@ -127,30 +127,16 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
         }
 
         window.clear();
-<<<<<<< HEAD
-=======
         window.draw(background);
->>>>>>> main
         window.draw(title);
         for (int i = 0; i < NUM_ITEMS; ++i) 
         {
-
             window.draw(buttons[i]);
         }
         window.display();
     }
 }
 
-
-
-
-<<<<<<< HEAD
-
-int main()
-{
-  sf::ContextSettings settings;
-  settings.antialiasingLevel= 8;
-=======
 int main()
 {
   sf::ContextSettings settings;
@@ -159,38 +145,6 @@ int main()
   sf::RenderWindow window(sf::VideoMode(800,600), "Magical Pets Kingdom", sf::Style::Default,  settings);
   window.setFramerateLimit(30);
    sf::Font font;
-
-<<<<<<< HEAD
-    if (!font.loadFromFile("arial.ttf")) {
-        return -1;
-    }
-  
-  sf::CircleShape ball(50.f);
-  ball.setFillColor(sf::Color::Yellow);
-  ball.setPosition(0.f, 0.f);
-
-  sf::Vector2f velocity(5.f, 5.f);
-   
-
-
-  while(window.isOpen())
-  {
-    sf::Event event;
-    while(window.pollEvent(event))
-    {
-    if(event.type == sf::Event::Closed)
-    window.close();
-    }
-
-  window.clear(sf::Color::Black);
-  
-  runMenu(window, font);
-  
-  window.display();
-  }
-  
-  
-=======
     if(!font.loadFromFile("arial.ttf")) 
     {
       return -1;
