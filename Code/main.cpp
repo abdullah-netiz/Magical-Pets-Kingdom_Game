@@ -34,6 +34,12 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
   title.setOrigin(titleBounds.left + titleBounds.width / 2.0f, titleBounds.top + titleBounds.height / 2.0f);
   title.setPosition(window.getSize().x / 2.0f, 60); 
 
+    sf::Texture bgTexture;
+    if(!bgTexture.loadFromFile("../Assets/menu.png)"))
+    {
+      cout << "Failed to load background!" << endl;
+    }
+    sf::Sprite background(bgTexture);
     
     for(int i = 0; i < NUM_ITEMS; ++i) 
     {
@@ -83,6 +89,7 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
         }
 
         window.clear();
+        window.draw(background);
         window.draw(title);
         for (int i = 0; i < NUM_ITEMS; ++i) 
         {
