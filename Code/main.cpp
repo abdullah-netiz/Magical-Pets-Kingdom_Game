@@ -18,8 +18,8 @@ using namespace std;
 
 
 const int NUM_ITEMS = 4;
-<<<<<<< HEAD
-=======
+
+
 void playGame(sf::RenderWindow &window, sf::Font &font) {
     sf::Text text;
     text.setFont(font);
@@ -44,7 +44,7 @@ void playGame(sf::RenderWindow &window, sf::Font &font) {
 }
 
 
->>>>>>> main
+
 
 void runMenu(sf::RenderWindow &window, sf::Font &font) 
 {
@@ -61,15 +61,15 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
   title.setOrigin(titleBounds.left + titleBounds.width / 2.0f, titleBounds.top + titleBounds.height / 2.0f);
   title.setPosition(window.getSize().x / 2.0f, 60); 
 
-<<<<<<< HEAD
-=======
+
+
     sf::Texture bgTexture;
-    if(!bgTexture.loadFromFile("../Assets/menu.jpg)"))
+    if(!bgTexture.loadFromFile("../Assets/sprite.png)"))
     {
       cout << "Failed to load background!" << endl;
     }
     sf::Sprite background(bgTexture);
->>>>>>> main
+
     
     for(int i = 0; i < NUM_ITEMS; ++i) 
     {
@@ -95,18 +95,13 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
                 }
                 else if (event.key.code == sf::Keyboard::Down) {
                     selectedIndex = (selectedIndex + 1) % NUM_ITEMS;
-                }
-<<<<<<< HEAD
-                else if (event.key.code == sf::Keyboard::Enter) {
-                    if (selectedIndex == 0) {
-                        
-=======
+                }    
                 else if (event.key.code == sf::Keyboard::Enter) 
                 {
                     if (selectedIndex == 0) 
                     {
                       playGame(window, font);    
->>>>>>> main
+
                     } else if (selectedIndex == 1) {
                         
                     } else if (selectedIndex == 2) {
@@ -131,17 +126,17 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
         window.draw(title);
         for (int i = 0; i < NUM_ITEMS; ++i) 
         {
-            window.draw(buttons[i]);
+          window.draw(buttons[i]);
         }
         window.display();
     }
-}
+  }
 
 int main()
 {
   sf::ContextSettings settings;
   
->>>>>>> main
+
   sf::RenderWindow window(sf::VideoMode(800,600), "Magical Pets Kingdom", sf::Style::Default,  settings);
   window.setFramerateLimit(30);
    sf::Font font;
@@ -152,7 +147,7 @@ int main()
    
   runMenu(window, font);
   
->>>>>>> main
+
   return 0;
 }
 
