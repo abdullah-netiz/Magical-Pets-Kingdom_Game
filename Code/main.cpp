@@ -35,7 +35,7 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
   title.setPosition(window.getSize().x / 2.0f, 60); 
 
     sf::Texture bgTexture;
-    if(!bgTexture.loadFromFile("../Assets/menu.png)"))
+    if(!bgTexture.loadFromFile("../Assets/menu.jpg)"))
     {
       cout << "Failed to load background!" << endl;
     }
@@ -99,7 +99,6 @@ void runMenu(sf::RenderWindow &window, sf::Font &font)
         window.display();
     }
 }
-
 
 
 
