@@ -17,20 +17,104 @@ using namespace std;
 
 
 
+const int NUM_ITEMS = 4;
 
-void mainMenu();
+void runMenu(sf::RenderWindow &window, sf::Font &font) 
+{
+  sf::Text buttons[NUM_ITEMS];
+  string labels[NUM_ITEMS] = { "Play Game", "View Pets", "View Guilds" ,"Exit"};
+  int selectedIndex = 0;
+  sf::Text title;
+  title.setFont(font);
+  title.setString("Magical Pets Kingdom");
+  title.setCharacterSize(35);
+  title.setFillColor(sf::Color::Cyan);
+  title.setPosition(150,20);
+  sf::FloatRect titleBounds = title.getLocalBounds();
+  title.setOrigin(titleBounds.left + titleBounds.width / 2.0f, titleBounds.top + titleBounds.height / 2.0f);
+  title.setPosition(window.getSize().x / 2.0f, 60); 
+
+    
+    for(int i = 0; i < NUM_ITEMS; ++i) 
+    {
+        buttons[i].setFont(font);
+        buttons[i].setString(labels[i]);
+        buttons[i].setCharacterSize(30);
+        buttons[i].setPosition(200, 100 + i * 70);
+        sf::FloatRect bounds = buttons[i].getLocalBounds();
+        buttons[i].setOrigin(bounds.left + bounds.width / 2.0f, bounds.top + bounds.height / 2.0f);
+        buttons[i].setPosition(window.getSize().x / 2.0f, 150 + i * 70);
+        buttons[i].setFillColor(i == selectedIndex ? sf::Color::Yellow : sf::Color::White);
+    }
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+
+            if (event.type == sf::Event::KeyPressed) {
+                if (event.key.code == sf::Keyboard::Up) {
+                    selectedIndex = (selectedIndex - 1 + NUM_ITEMS) % NUM_ITEMS;
+                }
+                else if (event.key.code == sf::Keyboard::Down) {
+                    selectedIndex = (selectedIndex + 1) % NUM_ITEMS;
+                }
+                else if (event.key.code == sf::Keyboard::Enter) {
+                    if (selectedIndex == 0) {
+                        
+                    } else if (selectedIndex == 1) {
+                        
+                    } else if (selectedIndex == 2) {
+                        window.close(); // Exit
+                    }
+                    else if (selectedIndex ==3)
+                    {
+                      window.close();
+                    }
+                }
+
+              
+                for (int i = 0; i < NUM_ITEMS; ++i) 
+                {
+                buttons[i].setFillColor(i == selectedIndex ? sf::Color::Yellow : sf::Color::White);
+                }
+            }
+        }
+
+        window.clear();
+        window.draw(title);
+        for (int i = 0; i < NUM_ITEMS; ++i) 
+        {
+
+            window.draw(buttons[i]);
+        }
+        window.display();
+    }
+}
+
+
+
+
+
 int main()
 {
   sf::ContextSettings settings;
   settings.antialiasingLevel= 8;
   sf::RenderWindow window(sf::VideoMode(800,600), "Magical Pets Kingdom", sf::Style::Default,  settings);
   window.setFramerateLimit(30);
+   sf::Font font;
+
+    if (!font.loadFromFile("arial.ttf")) {
+        return -1;
+    }
+  
   sf::CircleShape ball(50.f);
   ball.setFillColor(sf::Color::Yellow);
   ball.setPosition(0.f, 0.f);
 
   sf::Vector2f velocity(5.f, 5.f);
-
+   
 
 
   while(window.isOpen())
@@ -43,14 +127,9 @@ int main()
     }
 
   window.clear(sf::Color::Black);
-  ball.move(velocity);
-  sf::Vector2f pos = ball.getPosition();
-  if(pos.x <=0 || pos.x + ball.getRadius()*2 >= 800)
-  velocity.x *= -1;
-  if(pos.y <=0 || pos.y + ball.getRadius()*2 >=600)
-  velocity.y *=-1;
   
-  window.draw(ball);
+  runMenu(window, font);
+  
   window.display();
   }
   
@@ -62,21 +141,3 @@ int main()
 
 
 
-
-
-void mainMenu()
-{
-  int choice;
-  cout<<"Welcome to the Magical Pets Kingdom Game\n";
-  cout<<"==========================================\n";
-  cout<<"1.Play Game\n";
-  cout<<"2.Save Game\n";
-  cout<<"3.Load Game\n";
-  cout<<"4.Exit game\n";
-  cout<<"===========================================\n";
-  do{
-  cin >> choice;
-  if(choice <1 || choice >4)
-  cout<<"Enter again Invalid Choice\n";
-  }while(choice <1 || choice >4);
-}
