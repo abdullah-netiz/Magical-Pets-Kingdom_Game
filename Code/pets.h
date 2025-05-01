@@ -14,7 +14,7 @@ class Ability{
     int currentTimer;
     public:
     Ability(string n, string desc, int cost, int cd) 
-            : name(n), description(desc), manaCost(cost), cooldownTimer(cd), currentTimer(0) {}
+            : name(n), description(desc), manaCost(cost), coolDownTimer(cd), currentTimer(0) {}
     
 
 };
@@ -34,13 +34,13 @@ class Pet{
     int abilityPoints;
     int coolDownCounter;
     bool isAlive;
-    bool specialAbility;
+
     
     int maxMana;
     int currentMana;
     int trainingPoints;
     public:
-    Pet(string name, string type): this->name(name), this->type(type){}
+    Pet(string n, string t): name(n), type(t){}
     
 //getter setter
     void setName(const string& newName);
@@ -89,15 +89,9 @@ class Pet{
     bool operator==(const Pet& other) const;
     bool operator!=(const Pet& other) const;
     Pet& operator+=(int expPoints);
-    virtual void specialAbility() = 0;
+    void specialAbility();
     
 };
-// Dragon.h
-// Name: [Your Name]
-// Student ID: [Your ID]
-// Assignment: OOP Project
-
-
 class Dragon : public Pet {
 private:
     int fireBreathPower;
@@ -108,15 +102,15 @@ public:
     Dragon(const string& name);
     
     
-    // Override virtual functions
-    virtual void levelUp() override;
-    virtual int calculateDamage() const override;
-    virtual void displayStats() const override;
+    //  virtual functions
+    virtual void levelUp() ;
+    virtual int calculateDamage() const ;
+    virtual void displayStats() const;
     
     // Special abilities
-    virtual void specialAbility() override;
+    virtual void specialAbility() ;
     void fireballAttack(Pet& target);
-    void dragonsRoar(vector<Pet*>& enemies);
+    void dragonsRoar(Pet* enemies);
     
     // Getters and setters specific to Dragon
     int getFireBreathPower() const;
@@ -131,18 +125,18 @@ private:
     
 public:
     // Constructor
-    Phoenix(const std::string& name);
+    Phoenix(const string& name);
     
     // Destructor
     virtual ~Phoenix();
     
-    // Override virtual functions
-    virtual void levelUp() override;
-    virtual int calculateDamage() const override;
-    virtual void displayStats() const override;
+    //  virtual functions
+    virtual void levelUp() ;
+    virtual int calculateDamage() const ;
+    virtual void displayStats() const ;
     
     // Special abilities
-    virtual void specialAbility() override;
+    virtual void specialAbility() ;
     void flameHealing(Pet& target);
     bool rebirth();
     
@@ -162,19 +156,19 @@ private:
     
 public:
     // Constructor
-    Unicorn(const std::string& name);
+    Unicorn(const string& name);
     
     // Destructor
     virtual ~Unicorn();
     
-    // Override virtual functions
-    virtual void levelUp() override;
-    virtual int calculateDamage() const override;
-    virtual void displayStats() const override;
-    virtual void updateCooldowns() override;
+    //  virtual functions
+    virtual void levelUp() ;
+    virtual int calculateDamage() const ;
+    virtual void displayStats() const ;
+    virtual void updateCooldowns() ;
     
     // Special abilities
-    virtual void specialAbility() override;
+    virtual void specialAbility() ;
     void speedBurst();
     void magicShield();
     
@@ -197,18 +191,18 @@ private:
     
 public:
     // Constructor
-    Griffin(const std::string& name);
+    Griffin(const string& name);
     
     // Destructor
     virtual ~Griffin();
     
-    // Override virtual functions
-    virtual void levelUp() override;
-    virtual int calculateDamage() const override;
-    virtual void displayStats() const override;
+    //  virtual functions
+    virtual void levelUp() ;
+    virtual int calculateDamage() const ;
+    virtual void displayStats() const ;
     
     // Special abilities
-    virtual void specialAbility() override;
+    virtual void specialAbility() ;
     void clawStrike(Pet& target);
     void diveBomb(Pet& target);
     

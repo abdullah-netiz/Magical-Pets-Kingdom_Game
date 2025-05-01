@@ -8,7 +8,7 @@
 using namespace std;
 
 #include <string>
-#include "Pet.h"
+#include "pets.h"
 
 // Forward declaration
 class Guild;
@@ -19,10 +19,7 @@ const int MAX_ITEMS = 20;
 const int MAX_GUILD_MEMBERS = 10;
 const int MAX_GUILD_PETS = 30;
 
-const int PET_ROLE_TANK = 0;
-const int PET_ROLE_HEALER = 1;
-const int PET_ROLE_DAMAGE_DEALER = 2;
-const int PET_ROLE_SUPPORT = 3;
+
 const int PET_ROLE_NONE = 4;
 
 struct GuildPetAssignment {
@@ -191,9 +188,9 @@ public:
     void displayMembers() const;
     
     // Pet assignment
-    bool assignPet(Pet* pet, PetRole role);
+    bool assignPet(Pet* pet, GuildPetAssignment role);
     bool removePet(Pet* pet);
-    bool updatePetRole(Pet* pet, PetRole newRole);
+    bool updatePetRole(Pet* pet, GuildPetAssignment newRole);
     void displayAssignedPets() const;
     GuildPetAssignment* getPetAssignment(int index);
     int findPetAssignmentIndex(Pet* pet) const;
@@ -208,7 +205,7 @@ public:
     
     // Team composition checks
     bool hasValidTeamComposition() const;
-    int countPetsWithRole(PetRole role) const;
+    int countPetsWithRole(GuildPetAssignment role) const;
     
     // Save/Load functions
       string saveToString() const;

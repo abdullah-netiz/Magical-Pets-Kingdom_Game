@@ -5,8 +5,9 @@
 #define BATTLE_H
 
 #include <string>
-#include "Pet.h"
-#include "Player.h"
+#include "pets.h"
+#include "player.h"
+using namespace std;
 
 // Constants
 const int MAX_BATTLE_PETS = 4; // For 2v2 battles
@@ -49,7 +50,7 @@ const int PET_ROLE_TANK = 0;
 const int PET_ROLE_HEALER = 1;
 const int PET_ROLE_DAMAGE_DEALER = 2;
 const int PET_ROLE_SUPPORT = 3;
-const int PET_ROLE_NONE = 4;
+
 
 
 class Battle {
