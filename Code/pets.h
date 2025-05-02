@@ -6,6 +6,8 @@
 #include<iostream>
 using namespace std;
 #include<string>
+
+
 class Ability{
     string name;
     string description;
@@ -35,13 +37,45 @@ class Pet{
     int coolDownCounter;
     bool isAlive;
 
+
+    sf::Texture texture;
+    sf::Sprite sprite;
+    int currentFrame;
+    int animationRow;
+    int frameWidth;
+    int frameHeight;
+    
     
     int maxMana;
     int currentMana;
     int trainingPoints;
+
+
+
     public:
-    Pet(string n, string t): name(n), type(t){}
     
+
+     bool loadTexture(const string& path) {
+        if (texture.loadFromFile(path)) {
+            sprite.setTexture(texture);
+            return true;
+        }
+        return false;
+    }
+    
+    void updateAnimation() {
+        currentFrame = (currentFrame + 1) % 3; // Assuming 3 frames per animation
+        sprite.setTextureRect(sf::IntRect(   currentFrame * frameWidth,   animationRow * frameHeight,   frameWidth,   frameHeight));
+        }
+    
+    sf::Sprite& getSprite() { return sprite; }
+    
+    // Initialize animation parameters in constructor
+    Pet(string n, string t) : name(n), type(t), currentFrame(0), animationRow(0), 
+                              frameWidth(64), frameHeight(64) {}
+
+
+
 //getter setter
     void setName(const string& newName);
     void setType(const string& newType);
