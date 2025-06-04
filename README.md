@@ -14,6 +14,46 @@ Welcome to **Magical Pets Kingdom**, a second-semester OOP game project built wi
 <br>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * **Choose Your Pet**: Dragon, Phoenix, Unicorn, or Griffin – each with unique stats and animations.
 * **Train**: Level up your pet in the Training Camp to boost their stats.
 * **Shop**: Purchase items like Healing Potions, Mana Potions, and Shields to aid your journey.
