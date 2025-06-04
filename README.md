@@ -12,6 +12,40 @@ Welcome to **Magical Pets Kingdom**, a second-semester OOP game project built wi
 <br>
 ![ss](https://github.com/user-attachments/assets/36858e04-5f07-4535-b9e0-4fe39f15dad3)
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 
 
