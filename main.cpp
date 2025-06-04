@@ -1819,7 +1819,7 @@ public:
         brd.setPosition(10, 15);
         brd.setScale(2.3f, 1.2f);
 
-        buffer.loadFromFile("sound/coin.wav");
+        buffer.loadFromFile("assets/sound/coin.wav");
         sound.setBuffer(buffer);
         sound.setVolume(50);
         sound.setPitch(1.5f);
@@ -2065,7 +2065,7 @@ public:
         goldText.setPosition(400, 25);
         goldText.setFillColor(sf::Color::Yellow);
 
-        buffer.loadFromFile("sound/coin.wav");
+        buffer.loadFromFile("assets/sound/coin.wav");
         sound.setBuffer(buffer);
         sound.setVolume(50);
         sound.setPitch(1.5f);
@@ -2408,7 +2408,7 @@ private:
 public:
     TrainingCamp(sf::RenderWindow &win, sf::Font &f, Player *p) : window(win), font(f), player(p), selectedPetIndex(0),trainingTimer(0), isTraining(false), shouldReturnToMenu(false)
     {
-        buffer.loadFromFile("sound/coin.wav");
+        buffer.loadFromFile("assets/sound/coin.wav");
         sound.setBuffer(buffer);
         sound.setVolume(50);
         sound.setPitch(1.5f);
@@ -2687,7 +2687,7 @@ private:
 public:
 Battle()
 {
-    buffer.loadFromFile("sound/attack.wav");
+    buffer.loadFromFile("assets/sound/attack.wav");
     sound.setBuffer(buffer);
     sound.setVolume(50);
     sound.setPitch(1.5f);
@@ -4812,7 +4812,7 @@ void createNewPlayer(sf::RenderWindow &window, sf::Font &font)
             bg.addLayer("assets/BattleBG/7.png", 20.f);
 
             sf::Font title;
-            title.loadFromFile("tl.ttf");
+            title.loadFromFile("assets/tl.ttf");
             sf::Text MenuTxt("Choose your battle type!", title, 20);
             MenuTxt.setPosition(190, 80);
             MenuTxt.setFillColor(sf::Color(10, 20, 60, 255));
@@ -5490,7 +5490,7 @@ void createNewPlayer(sf::RenderWindow &window, sf::Font &font)
             Button(220, 240, 150, 40, font, options[3])};
 
         sf::Font title;
-        title.loadFromFile("tl.ttf");
+        title.loadFromFile("assets/tl.ttf");
         sf::Text gameTitle("Magical Pets Kingdom", title);
         gameTitle.setPosition(90, 20);
         gameTitle.setOutlineColor(sf::Color::White);
@@ -5774,12 +5774,12 @@ int main()
     sf::Font font;
     sf::SoundBuffer buffer;
 
-    if(!buffer.loadFromFile("sound/1.wav"))
+    if(!buffer.loadFromFile("assets/sound/1.wav"))
         return -1;
     sf::Sound sound(buffer);
     sound.play();
 
-    if(!font.loadFromFile("title.ttf"))
+    if(!font.loadFromFile("assets/title.ttf"))
     {
         cerr << "Failed to load font\n";
         return -1;
