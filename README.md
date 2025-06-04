@@ -1,8 +1,14 @@
-# 🐉 Magical Pets Kingdom
+![Game](https://github.com/user-attachments/assets/5a2609f4-899b-4b9d-ad05-39b97ea92076)# 🐉 Magical Pets Kingdom
 
 Welcome to **Magical Pets Kingdom**, a second-semester OOP game project built with **C++** and **SFML**! In this fantasy game, players raise mythical pets, train them, and engage in epic battles. This project highlights OOP principles and SFML graphics magic. Let's dive in!
 
 ## 🎮 Gameplay Overview
+
+![Game](https://github.com/user-attachments/assets/b4a0361c-a9d6-4137-8795-fb70d61e0606)
+![Menu](https://github.com/user-attachments/assets/2cf4172d-00e2-46c3-a787-e782dc5d3cc7)
+![gm](https://github.com/user-attachments/assets/3ba7f33d-a2e2-4342-bded-42c2223bef47)
+![ss](https://github.com/user-attachments/assets/36858e04-5f07-4535-b9e0-4fe39f15dad3)
+
 
 * **Choose Your Pet**: Dragon, Phoenix, Unicorn, or Griffin – each with unique stats and animations.
 * **Train**: Level up your pet in the Training Camp to boost their stats.
