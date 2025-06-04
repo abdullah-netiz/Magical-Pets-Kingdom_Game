@@ -1,4 +1,4 @@
-![Game](https://github.com/user-attachments/assets/5a2609f4-899b-4b9d-ad05-39b97ea92076)# 🐉 Magical Pets Kingdom
+# 🐉 Magical Pets Kingdom
 
 Welcome to **Magical Pets Kingdom**, a second-semester OOP game project built with **C++** and **SFML**! In this fantasy game, players raise mythical pets, train them, and engage in epic battles. This project highlights OOP principles and SFML graphics magic. Let's dive in!
 
