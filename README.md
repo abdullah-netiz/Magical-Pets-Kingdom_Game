@@ -5,9 +5,13 @@ Welcome to **Magical Pets Kingdom**, a second-semester OOP game project built wi
 ## 🎮 Gameplay Overview
 
 ![Game](https://github.com/user-attachments/assets/b4a0361c-a9d6-4137-8795-fb70d61e0606)
+<br>
 ![Menu](https://github.com/user-attachments/assets/2cf4172d-00e2-46c3-a787-e782dc5d3cc7)
+<br>
 ![gm](https://github.com/user-attachments/assets/3ba7f33d-a2e2-4342-bded-42c2223bef47)
+<br>
 ![ss](https://github.com/user-attachments/assets/36858e04-5f07-4535-b9e0-4fe39f15dad3)
+<br>
 
 
 * **Choose Your Pet**: Dragon, Phoenix, Unicorn, or Griffin – each with unique stats and animations.
