@@ -104,7 +104,7 @@ public:
         if(currentTrack != filename)
         {
             currentTrack = filename;
-            if(music.openFromFile("sound/" + filename))
+            if(music.openFromFile("assets/sound/" + filename))
             {
                 music.setLoop(isLooping);
                 music.setVolume(volume);
